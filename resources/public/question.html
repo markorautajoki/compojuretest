@@ -1,0 +1,14 @@
+<div ng-show="!done">
+    <h3>Kysymys {{currentQuestionIndex + 1 }} / 4</h3>
+
+    <div>{{questionData[currentQuestionIndex].question}}</div>
+
+    <form name="questionForm">
+        <input type="radio" name="answerGroup" ng-model="selectedAnswer" value="0" ng-required="true"> {{questionData[currentQuestionIndex].answers[0].text}} <br>
+        <input type="radio" name="answerGroup" ng-model="selectedAnswer" value="1" ng-required="true"> {{questionData[currentQuestionIndex].answers[1].text}} <br>
+        <input type="radio" name="answerGroup" ng-model="selectedAnswer" value="2" ng-required="true"> {{questionData[currentQuestionIndex].answers[2].text}} <br>
+        <input type="submit" ng-click="submitAnswer()" ng-disabled="!questionForm.$valid">
+    </form>
+</div>
+
+<h3 ng-show="done">Oikeita vastauksia {{correct}}/4</h3>
