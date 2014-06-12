@@ -5,6 +5,7 @@
             [compojure.route :as route]
             [compojure.core :as c]
             [clojure.walk :as w]
+            [compojurepoc.mongo :as m]
             [ring.util.response :as resp]
             [ring.middleware.json :refer [wrap-json-params]]
             [ring.middleware.keyword-params :refer [wrap-keyword-params]]
@@ -58,7 +59,7 @@
   (dissoc answer :correct))
 
 (defn format-questions []
-  (map #(assoc % :answers (map strip-correct-answers (:answers %))) question-data))
+  (map #(assoc % :answers (map strip-correct-answers (:answers %))) (:message (m/find-questions))))
 
 (defn testdata []
   (json-response (format-questions)))

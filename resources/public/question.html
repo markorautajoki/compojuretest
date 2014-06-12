@@ -1,5 +1,5 @@
 <div ng-show="!done">
-    <h3>Kysymys {{currentQuestionIndex + 1 }} / 4</h3>
+    <h3>Kysymys {{currentQuestionIndex + 1 }} / {{questionData.length}}</h3>
 
     <div>{{questionData[currentQuestionIndex].question}}</div>
 
@@ -11,4 +11,4 @@
     </form>
 </div>
 
-<h3 ng-show="done">Oikeita vastauksia {{correct}}/4</h3>
+<h3 ng-show="done">Oikeita vastauksia {{correct}}/{{questionData.length}}</h3>
