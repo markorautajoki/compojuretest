@@ -5,7 +5,7 @@
                  [compojure "1.1.6"]
                  [cheshire "5.2.0"]
                  [ring/ring-json "0.2.0"]
-                 [com.novemberain/monger "1.4.0"]]
+                 [com.novemberain/monger "2.0.0-rc1"]]
   :plugins [[lein-ring "0.8.10"]]
   :ring {:handler compojurepoc.handler/app
          :nrepl {:start? true :port 5555}}
