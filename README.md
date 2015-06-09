@@ -1,6 +1,6 @@
 # compojurepoc
 
-FIXME
+This is a test
 
 ## Prerequisites
 
